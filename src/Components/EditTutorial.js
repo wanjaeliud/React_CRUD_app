@@ -22,7 +22,7 @@ const EditTutorial = () => {
           </FormControl>
           <FormControl>
             <label>Title</label>
-            <TextareaAutosize rows={20} cols={100}/>
+            <TextareaAutosize rows={20} cols={50}/>
           </FormControl>
           <FormControl>
             <InputLabel>Link</InputLabel>
