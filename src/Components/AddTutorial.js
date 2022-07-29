@@ -23,7 +23,7 @@ const AddTutorial = () => {
           </FormControl>
           <FormControl>
             <label>Title</label>
-            <TextareaAutosize/>
+            <TextareaAutosize rows={20} cols={100}/>
           </FormControl>
           <FormControl>
             <InputLabel>Link</InputLabel>
