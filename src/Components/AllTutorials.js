@@ -40,6 +40,16 @@ const AllTutorials = () => {
             <TableCell></TableCell>
           </TableRow>
         </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+          </TableRow>
+        </TableBody>
       </Table>
   );
 };
