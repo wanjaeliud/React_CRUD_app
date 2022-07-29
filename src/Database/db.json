@@ -12,35 +12,35 @@
       "author": "w3schools",
       "description": "They help in page routing to make our apps looks like SPA",
       "url": "https://www.w3schools.com/react/react_router.asp",
-      "id": 3
+      "id": 2
     },
     {
       "title": "React Props",
       "author": "w3schools",
       "description": "They are arguments passed in components",
       "url": "https://www.w3schools.com/react/react_props.asp",
-      "id": 4
+      "id": 3
     },
     {
       "title": "React Events",
       "author": "w3schools",
       "description": "Actions performed based on user events",
       "url": "https://www.w3schools.com/react/react_events.asp",
-      "id": 5
+      "id": 4
     },
     {
       "title": "React Memo",
       "author": "w3schools",
       "description": "skips component rendering if its props has not changed",
       "url": "https://www.w3schools.com/react/react_memo.asp",
-      "id": 6
+      "id": 5
     },
     {
       "title": "React Forms",
       "author": "s3schools",
       "description": "React uses forms to allow users to interact with the web page",
       "url": "https://www.w3schools.com/react/react_forms.asp",
-      "id": 7
+      "id": 6
     }
   ]
 }
