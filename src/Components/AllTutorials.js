@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
+  Button,
   makeStyles,
   Table, TableBody,
   TableCell,
   TableHead,
   TableRow,
 } from '@material-ui/core';
+import {deleteTutorial, getAllTutorials} from '../service/api';
+import {Link} from 'react-router-dom';
 
 const useStyle = makeStyles({
   table: {
@@ -27,7 +30,25 @@ const useStyle = makeStyles({
 });
 
 const AllTutorials = () => {
-  const classes =useStyle()
+
+  const classes = useStyle();
+
+  const [tutorial, setTutorial] = useState([]);
+  useEffect(() => {
+    getTutorials();
+  }, []);
+
+  const getTutorials = async () => {
+    const response = await getAllTutorials();
+    console.log(response);
+    setTutorial(response.data);
+  };
+
+  const deleteData = async (id) => {
+    await deleteTutorial(id);
+    getTutorials();
+  };
+
   return (
       <Table className={classes.table}>
         <TableHead>
@@ -41,14 +62,25 @@ const AllTutorials = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-          </TableRow>
+          {
+            tutorial.map((data) => (
+                <TableRow className={classes.trow}>
+                  <TableCell>{data.id}</TableCell>
+                  <TableCell>{data.title}</TableCell>
+                  <TableCell>{data.author}</TableCell>
+                  <TableCell>{data.description}</TableCell>
+                  <TableCell>{data.url}</TableCell>
+                  <TableCell>
+                    <Button variant="contained" color="primary"
+                            style={{margin: '0px 20px'}} component={Link}
+                            to={`/edit/${data.id}`}>Edit</Button>
+                    <Button variant="contained" color="secondary"
+                            style={{margin: '0px 20px'}}
+                            onClick={() => deleteData(data.id)}>Cancel</Button>
+                  </TableCell>
+                </TableRow>
+            ))
+          }
         </TableBody>
       </Table>
   );
