@@ -76,7 +76,7 @@ const AllTutorials = () => {
                             to={`/edit/${data.id}`}>Edit</Button>
                     <Button variant="contained" color="secondary"
                             style={{margin: '0px 20px'}}
-                            onClick={() => deleteData(data.id)}>Cancel</Button>
+                            onClick={() => deleteData(data.id)}>Delete</Button>
                   </TableCell>
                 </TableRow>
             ))
