@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Box, Button,
   Container,
   FormControl,
   FormGroup, Input,
@@ -14,11 +15,11 @@ const AddTutorial = () => {
         <FormGroup>
           <FormControl>
             <InputLabel>Title</InputLabel>
-            <Input />
+            <Input/>
           </FormControl>
           <FormControl>
             <InputLabel>Author</InputLabel>
-            <Input />
+            <Input/>
           </FormControl>
           <FormControl>
             <label>Title</label>
@@ -26,9 +27,15 @@ const AddTutorial = () => {
           </FormControl>
           <FormControl>
             <InputLabel>Link</InputLabel>
-            <Input />
+            <Input/>
           </FormControl>
         </FormGroup>
+        <Box my={3}>
+          <Button variant="contained" color="primary" align="center">Add
+            Tutorial</Button>
+          <Button variant="contained" color="secondary"
+                  align="center">Cancel</Button>
+        </Box>
       </Container>
   );
 };
