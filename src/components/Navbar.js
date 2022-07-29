@@ -20,8 +20,8 @@ const Navbar = () => {
       <AppBar className={classes.header} position='static'>
         <Toolbar>
           <NavLink to="/" className={classes.spacing} >Crud App</NavLink>
-          <NavLink to="/" className={classes.spacing}>All Tutorials</NavLink>
-          <NavLink to="/" className={classes.spacing}>Add Tutorial</NavLink>
+          <NavLink to="all" className={classes.spacing}>All Tutorials</NavLink>
+          <NavLink to="add" className={classes.spacing}>Add Tutorial</NavLink>
         </Toolbar>
       </AppBar>
   );

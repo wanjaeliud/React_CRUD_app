@@ -10,21 +10,21 @@ import {useHistory, useParams} from 'react-router-dom';
 import {editTutorial, getAllTutorials} from '../service/api';
 
 const initialValue = {
-  title: '',
-  author: '',
-  description: '',
-  url: '',
+  title: "",
+  author: "",
+  description: "",
+  more: "",
 };
 
 const EditTutorial = () => {
   const [tutorial, setTutorial] = useState(initialValue);
-  const {title, author, description, url} = tutorial;
+  const {title, author, description, more} = tutorial;
 
   const {id} = useParams();
 
   useEffect(() => {
     loadTutorialData();
-  }) ;
+  }, []) ;
 
   const loadTutorialData = async () => {
     const response = await getAllTutorials(id);
@@ -34,10 +34,10 @@ const EditTutorial = () => {
   const history = useHistory();
 
   const onValueChange = (e) => {
-    //  console.log(e);
-    // console.log(e.target.value);
-    setTutorial({...tutorial, [e.target.title]: e.target.value});
-    console.log(tutorial);
+    setTutorial({...tutorial, [e.target.name]: e.target.value});
+    // console.log(e.target.name, e.target.value);
+    // console.log(tutorial);
+    // debugger
   };
 
   const editTutorialDetails = async () => {
@@ -68,8 +68,8 @@ const EditTutorial = () => {
             </FormControl>
             <FormControl>
               <InputLabel>Link</InputLabel>
-              <Input onChange={(e) => onValueChange(e)} name="url"
-                     value={url}/>
+              <Input onChange={(e) => onValueChange(e)}s name="more"
+                     value={more}/>
             </FormControl>
             <Box my={3}>
               <Button variant="contained" onClick={() => editTutorialDetails()}

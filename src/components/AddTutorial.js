@@ -11,22 +11,23 @@ import {useHistory} from 'react-router-dom';
 import {addTutorial} from '../service/api';
 
 const initialValue = {
-  title: '',
-  author: '',
-  description: '',
-  url: '',
+  title: "",
+  author: "",
+  description: "",
+  more: "",
 };
 
 const AddTutorial = () => {
 
   const [tutorial, setTutorial] = useState(initialValue);
-  const {title, author, description, url} = tutorial;
+  const {title, author, description, more} = tutorial;
 
   const history = useHistory();
 
-  const onValueChange = e => {
-    setTutorial({...tutorial, [e.target.title]: e.target.value});
-    console.log(tutorial);
+  const onValueChange = (e) => {
+    setTutorial(values  =>({...tutorial, [e.target.name]: e.target.value}));
+    // console.log(e.target.name, e.target.value);
+    // console.log(tutorial);
     // debugger
   };
 
@@ -42,23 +43,23 @@ const AddTutorial = () => {
           <FormGroup>
             <FormControl>
               <InputLabel>Title</InputLabel>
-              <Input onChange={(e) => onValueChange(e)} name="title"
-                     value={title}/>
+              <Input onChange={onValueChange}  name="title"
+                     value={title} />
             </FormControl>
             <FormControl>
               <InputLabel>Author</InputLabel>
-              <Input onChange={(e) => onValueChange(e)} name="author"
+              <Input onChange={onValueChange} name="author"
                      value={author}/>
             </FormControl>
             <FormControl>
               <label>Title</label>
-              <TextareaAutosize onChange={(e) => onValueChange(e)}
+              <TextareaAutosize onChange={onValueChange}
                                 name="description"
                                 value={description} rows={20} cols={50}/>
             </FormControl>
             <FormControl>
               <InputLabel>Link</InputLabel>
-              <Input onChange={(e) => onValueChange(e)} name="url" value={url}/>
+              <Input onChange={onValueChange} name="more" value={more}/>
             </FormControl>
 
             <Box my={3}>

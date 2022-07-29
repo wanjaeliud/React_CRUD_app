@@ -57,19 +57,19 @@ const AllTutorials = () => {
             <TableCell>Title</TableCell>
             <TableCell>Author</TableCell>
             <TableCell>Description</TableCell>
-            <TableCell>Date</TableCell>
+            <TableCell>Links</TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {
             tutorial.map((data) => (
-                <TableRow className={classes.trow}>
+                <TableRow className={classes.trow} key={data.id} >
                   <TableCell>{data.id}</TableCell>
                   <TableCell>{data.title}</TableCell>
                   <TableCell>{data.author}</TableCell>
                   <TableCell>{data.description}</TableCell>
-                  <TableCell>{data.url}</TableCell>
+                  <TableCell>{data.more}</TableCell>
                   <TableCell>
                     <Button variant="contained" color="primary"
                             style={{margin: '0px 20px'}} component={Link}

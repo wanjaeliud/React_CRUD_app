@@ -8,7 +8,7 @@ export const getAllTutorials = async (id) => {
 }
 
 export const addTutorial = async (tutorial) => {
-  return await axios.post(url, tutorial)
+  return await axios.post(url,tutorial)
 }
 
 export const editTutorial = async (id, tutorial) => {
