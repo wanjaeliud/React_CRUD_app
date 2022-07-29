@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Box, Button,
   Container,
@@ -8,7 +8,18 @@ import {
   Typography,
 } from '@material-ui/core';
 
+const initialValue = {
+  title: '',
+  author: '',
+  description: '',
+  link: '',
+}
+
 const AddTutorial = () => {
+
+  const [tutorial, setTutorial] = useState(initialValue)
+  const {title, author, description, link} = tutorial
+
   return (
       <Container maxWidth="sm">
         <Typography variant="h5" align="center">Add Tutorial</Typography>
