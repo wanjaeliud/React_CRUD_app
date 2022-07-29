@@ -1,9 +1,8 @@
-// import React from 'react';
-import Home from './Components/Home';
-import Navbar from './Components/Navbar';
-import AddTutorial from './Components/AddTutorial';
-import AllTutorials from './Components/AllTutorials';
-import EditTutorial from './Components/EditTutorial';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import AddTutorial from './components/AddTutorial';
+import AllTutorials from './components/AllTutorials';
+import EditTutorial from './components/EditTutorial';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 const App = () => {

@@ -11,7 +11,7 @@ export const addTutorial = async (tutorial) => {
   return await axios.post(url, tutorial)
 }
 
-export const EditTutorial = async (id, tutorial) => {
+export const editTutorial = async (id, tutorial) => {
   return await axios.put(`${url}/${id}`,tutorial)
 }
 
