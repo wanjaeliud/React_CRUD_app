@@ -7,7 +7,7 @@ export const getAllTutorials = async (id) => {
   return await axios.get(`${url}/${id}`)
 }
 
-export const addTutorial = async (tutorial) => {
+export const createTutorial = async (tutorial) => {
   return await axios.post(url,tutorial)
 }
 

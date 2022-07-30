@@ -18,10 +18,10 @@ const Navbar = () => {
   const classes = useStyles()
   return (
       <AppBar className={classes.header} position='static'>
-        <Toolbar>
+        <Toolbar style={{marginLeft: 50}} >
           <NavLink to="/" className={classes.spacing} >Crud App</NavLink>
-          <NavLink to="all" className={classes.spacing}>All Tutorials</NavLink>
-          <NavLink to="add" className={classes.spacing}>Add Tutorial</NavLink>
+          <NavLink to="list" className={classes.spacing}>List Tutorials</NavLink>
+          <NavLink to="create" className={classes.spacing}>Create Tutorial</NavLink>
         </Toolbar>
       </AppBar>
   );

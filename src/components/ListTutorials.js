@@ -12,24 +12,19 @@ import {Link} from 'react-router-dom';
 
 const useStyle = makeStyles({
   table: {
-    width: '80%',
-    margin: '50px 100px 100px 140px',
+    width: '90%',
+    margin: '80px 80px 80px 80px',
   },
   thead: {
     '& > *': {
-      background: '#000000',
+      background: '#212121',
       color: '#FFFFFF',
-      fontSize: '16px',
-    },
-  },
-  trow: {
-    '& > *': {
       fontSize: '16px',
     },
   },
 });
 
-const AllTutorials = () => {
+const ListTutorials = () => {
 
   const classes = useStyle();
 
@@ -71,8 +66,8 @@ const AllTutorials = () => {
                   <TableCell>{data.description}</TableCell>
                   <TableCell>{data.more}</TableCell>
                   <TableCell>
-                    <Button variant="contained" color="primary"
-                            style={{margin: '0px 20px'}} component={Link}
+                    <Button variant="contained" color="Blue"
+                             component={Link}
                             to={`/edit/${data.id}`}>Edit</Button>
                     <Button variant="contained" color="secondary"
                             style={{margin: '0px 20px'}}
@@ -86,4 +81,4 @@ const AllTutorials = () => {
   );
 };
 
-export default AllTutorials;
+export default ListTutorials;

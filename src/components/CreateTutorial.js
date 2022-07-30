@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
-import {addTutorial} from '../service/api';
+import {createTutorial} from '../service/api';
 
 const initialValue = {
   title: "",
@@ -17,7 +17,7 @@ const initialValue = {
   more: "",
 };
 
-const AddTutorial = () => {
+const CreateTutorial = () => {
 
   const [tutorial, setTutorial] = useState(initialValue);
   const {title, author, description, more} = tutorial;
@@ -26,20 +26,17 @@ const AddTutorial = () => {
 
   const onValueChange = (e) => {
     setTutorial(values  =>({...tutorial, [e.target.name]: e.target.value}));
-    // console.log(e.target.name, e.target.value);
-    // console.log(tutorial);
-    // debugger
   };
 
-  const addTutorialDetails = async () => {
-    await addTutorial(tutorial);
-    history.push('/all');
+  const changeDetails = async () => {
+    await createTutorial(tutorial);
+    history.push('/list');
   };
 
   return (
       <Container maxWidth="sm">
         <Box my={5}>
-          <Typography variant="h5" align="center">Add Tutorial</Typography>
+          <Typography variant="h5" align="center">Create Tutorial</Typography>
           <FormGroup>
             <FormControl>
               <InputLabel>Title</InputLabel>
@@ -63,13 +60,13 @@ const AddTutorial = () => {
             </FormControl>
 
             <Box my={3}>
-              <Button variant="contained" onClick={() => addTutorialDetails()}
-                      color="primary" align="center">Add
+              <Button variant="contained" onClick={() => changeDetails()}
+                      color="primary" align="center">Create
                 Tutorial</Button>
-              <Button onClick={() => history.push('/all')} variant="contained"
+              <Button onClick={() => history.push('/list')} variant="contained"
                       color="secondary"
                       style={{margin: '0px 20px'}}
-                      align="center">Cancel</Button>
+                      align="center">Back</Button>
             </Box>
           </FormGroup>
         </Box>
@@ -77,4 +74,4 @@ const AddTutorial = () => {
   );
 };
 
-export default AddTutorial;
+export default CreateTutorial;

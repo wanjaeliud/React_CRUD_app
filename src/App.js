@@ -1,7 +1,7 @@
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import AddTutorial from './components/AddTutorial';
-import AllTutorials from './components/AllTutorials';
+import CreateTutorial from './components/CreateTutorial';
+import ListTutorials from './components/ListTutorials';
 import EditTutorial from './components/EditTutorial';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -11,10 +11,9 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/all" component={AllTutorials} exact />
-          <Route path="/add" component={AddTutorial} exact />
+          <Route path="/list" component={ListTutorials} exact />
+          <Route path="/create" component={CreateTutorial} exact />
           <Route path="/edit/:id" component={EditTutorial} exact />
-          {/*<Route component={NotFound} />*/}
         </Switch>
 
       </Router>

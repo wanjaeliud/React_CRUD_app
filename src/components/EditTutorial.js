@@ -42,7 +42,7 @@ const EditTutorial = () => {
 
   const editTutorialDetails = async () => {
     await editTutorial(id, tutorial);
-    history.push('/all');
+    history.push('/list');
   };
 
   return (
@@ -74,9 +74,9 @@ const EditTutorial = () => {
             <Box my={3}>
               <Button variant="contained" onClick={() => editTutorialDetails()}
                       color="primary" align="center">Update User</Button>
-              <Button onClick={() => history.push('/all')} variant="contained"
+              <Button onClick={() => history.push('/list')} variant="contained"
                       color="secondary" align="center"
-                      style={{margin: '0px 20px'}}>Cancel</Button>
+                      style={{margin: '0px 20px'}}>Back</Button>
             </Box>
           </FormGroup>
         </Box>
