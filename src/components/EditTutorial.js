@@ -68,7 +68,7 @@ const EditTutorial = () => {
             </FormControl>
             <FormControl>
               <InputLabel>Link</InputLabel>
-              <Input onChange={(e) => onValueChange(e)}s name="more"
+              <Input onChange={(e) => onValueChange(e)} name="more"
                      value={more}/>
             </FormControl>
             <Box my={3}>
